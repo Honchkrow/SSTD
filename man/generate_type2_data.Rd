@@ -4,7 +4,7 @@
 \alias{generate_type2_data}
 \title{generate_type2_data}
 \usage{
-generate_type2_data(meta_data_file, gene_count_file, selected_clusters, type)
+generate_type2_data(meta_data_file, gene_count_file, selected_clusters, Prefix)
 }
 \arguments{
 \item{meta_data_file}{Path to the metadata file.}
@@ -13,16 +13,19 @@ generate_type2_data(meta_data_file, gene_count_file, selected_clusters, type)
 
 \item{selected_clusters}{A named vector specifying the clusters to include.}
 
-\item{type}{Prefix for the output CSV files.}
+\item{Prefix}{Prefix for the output CSV files.}
 }
 \description{
 This function generates data and plots for selected clusters.
 }
 \examples{
 \dontrun{
-type = "type_two"
-selected_clusters <- c(celltype1="eL4", celltype2="eL5", celltype3="eL6", celltype4="Endo")
-generate_type2_data("meta_data.csv", "gene_count.csv", selected_clusters, "type_two")
+Prefix = "type_two"
+selected_clusters <- c("eL4", "eL5", "eL6", "Endo")
+meta_data_file = "inst/extData/meta_data.csv"
+gene_count_file = "inst/extData/gene_count.csv"
+source("R/utilities.R")
+generate_type2_data(meta_data_file, gene_count_file, selected_clusters, Prefix)
 }
 
 }

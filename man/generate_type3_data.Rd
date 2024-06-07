@@ -4,7 +4,7 @@
 \alias{generate_type3_data}
 \title{generate_type3_data}
 \usage{
-generate_type3_data(meta_data_file, gene_count_file, selected_clusters, type)
+generate_type3_data(meta_data_file, gene_count_file, selected_clusters, Prefix)
 }
 \arguments{
 \item{meta_data_file}{Path to the metadata file.}
@@ -13,16 +13,18 @@ generate_type3_data(meta_data_file, gene_count_file, selected_clusters, type)
 
 \item{selected_clusters}{A named vector specifying the clusters to include.}
 
-\item{type}{Prefix for the output CSV files.}
+\item{Prefix}{Prefix for the output CSV files.}
 }
 \description{
 This function generates data and plots for selected clusters.
 }
 \examples{
 \dontrun{
-type = "type_three"
-selected_clusters <- c(celltype1="eL4", celltype2="eL5", celltype3="eL6", celltype4="Endo")
-generate_type3_data("meta_data.csv", "gene_count.csv", selected_clusters, "type_three")
+Prefix = "type_three"
+meta_data_file <- system.file(package="SSTD", "extdata", "meta_data.csv")
+gene_count_file <- system.file(package="SSTD", "extdata", "gene_count.csv")
+selected_clusters <- c("eL4", "eL5", "eL6", "Endo")
+generate_type3_data(meta_data_file, gene_count_file, selected_clusters, Prefix)
 }
 
 }

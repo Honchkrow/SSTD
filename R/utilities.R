@@ -8,6 +8,9 @@
 #' @param num_rows_per_cluster Number of rows to select per cluster.
 #' @return None
 #' @export
+#'
+#' @importFrom utils read.csv
+#'
 org_data_space <- function(meta_data_file, gene_count_file, output_csv_file, selected_clusters) {
     # Read the original CSV data
     meta_data <- read.csv(meta_data_file)
@@ -91,6 +94,9 @@ spatial_spot_true_prop <- function(cell_types, filename) {
 #' @param filename The filename to save the generated data to (default: "spatial_spot_loc.csv")
 #' @return A data frame containing the generated spatial spot location data
 #' @export
+#'
+#' @importFrom utils read.csv
+#'
 spatial_spot_loc <- function(filename) {
     # Generate grid data frame to store x, y coordinates, and labels
     grid <- data.frame(x = numeric(0),
@@ -253,9 +259,13 @@ result_matrix <- function(combined_array) {
 #' @return None
 #' @export
 #'
+#' @importFrom ggplot2 scale_color_discrete scale_fill_discrete
+#' @importFrom scatterpie geom_scatterpie
+#'
 #' @examples
 #' \dontrun{
-#' generate_plots_and_save(combined_arrays, selected_clusters, new_data, sim_spatial_spot_true_prop_data, type)
+#' generate_plots_and_save(combined_arrays, selected_clusters,
+#' new_data, sim_spatial_spot_true_prop_data, type)
 #' }
 #'
 generate_plots_and_save <- function(combined_arrays, include_celltypes, new_data, sim_spatial_spot_true_prop_data, prefix = "") {

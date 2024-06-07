@@ -21,8 +21,10 @@ This function generates data and plots for selected clusters.
 \examples{
 \dontrun{
 type = "type_one"
+meta_data_file <- system.file(package="SSTD", "extdata", "meta_data.csv")
+gene_count_file <- system.file(package="SSTD", "extdata", "gene_count.csv")
 selected_clusters <- c(celltype1="eL4", celltype2="eL5", celltype3="eL6", celltype4="Endo")
-generate_type1_data("meta_data.csv", "gene_count.csv", selected_clusters, "type_one")
+generate_type1_data(meta_data_file, gene_count_file, selected_clusters, "type_one")
 }
 
 }

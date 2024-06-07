@@ -26,7 +26,8 @@ The plots are saved as PDF files.
 }
 \examples{
 \dontrun{
-generate_plots_and_save(combined_arrays, selected_clusters, new_data, sim_spatial_spot_true_prop_data, type)
+generate_plots_and_save(combined_arrays, selected_clusters,
+new_data, sim_spatial_spot_true_prop_data, type)
 }
 
 }

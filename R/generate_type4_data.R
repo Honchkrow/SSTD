@@ -12,10 +12,9 @@
 #' @examples
 #' \dontrun{
 #' Prefix = "type_four"
-#' selected_clusters <- c("eL4", "eL5", eL6", "Endo")
-#' meta_data_file = "inst/extData/meta_data.csv"
-#' gene_count_file = "inst/extData/gene_count.csv"
-#' source("R/utilities.R")
+#' meta_data_file <- system.file(package="SSTD", "extdata", "meta_data.csv")
+#' gene_count_file <- system.file(package="SSTD", "extdata", "gene_count.csv")
+#' selected_clusters <- c("eL4", "eL5", "eL6", "Endo")
 #' generate_type4_data(meta_data_file, gene_count_file, selected_clusters, Prefix)
 #' }
 #'
