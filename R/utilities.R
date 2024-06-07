@@ -273,14 +273,20 @@ generate_plots_and_save <- function(combined_arrays, include_celltypes, new_data
               panel.grid.major = element_line(size = 0.5, linetype = 'solid'),
               panel.grid.minor = element_line(size = 0.5, linetype = 'solid'))
 
-    for (ctype in cell_types) {
-        # Check if combined_arrays[[ctype]] is a matrix
-        if (!is.matrix(combined_arrays[[ctype]])) {
-            # If not a matrix, convert it to a matrix
-            combined_arrays[[ctype]] <- as.matrix(combined_arrays[[ctype]])
-        }
-        sim_spatial_spot_true_prop_data[, ctype] <- c(t(combined_arrays[[ctype]]))
+    # 将 combined_arrays 的所有元素转换为矩阵
+    for (name in names(combined_arrays)) {
+        combined_arrays[[name]] <- as.matrix(combined_arrays[[name]])
     }
+
+    # 更新 sim_spatial_spot_true_prop_data 中相应的列
+    for (ctype in cell_types) {
+        if (ctype %in% names(combined_arrays)) {  # 确保 ctype 存在于 combined_arrays 中
+            sim_spatial_spot_true_prop_data[, ctype] <- c(t(combined_arrays[[ctype]]))
+        } else {
+            warning(paste("Cell type not found in combined_arrays:", ctype))
+        }
+    }
+
     write.csv(sim_spatial_spot_true_prop_data[, cell_types], paste0(prefix, "_spatial_spot_true_prop.csv"))
 
     # Pie chart of cell type proportions
@@ -354,10 +360,10 @@ get_gradation_3d <- function(width, height, start_list, stop_list, is_horizontal
 #' @export
 combined_arrays <- function(selected_clusters, celltype1, celltype2, celltype3, celltype4) {
     combined_arrays <- list(
-        celltype1 = celltype1,
-        celltype2 = celltype2,
-        celltype3 = celltype3,
-        celltype4 = celltype4
+        celltype1,
+        celltype2,
+        celltype3,
+        celltype4
     )
     names(combined_arrays) <- selected_clusters
     return(combined_arrays)
