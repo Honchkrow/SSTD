@@ -137,6 +137,7 @@ combined_arrays(c("Cluster1", "Cluster2"), matrix1, matrix2, matrix3, matrix4)
 # **Section4: 'generate_type1_data'**  
 ## ***4.1 Description***  
 This function processes the input data files, generates synthetic spatial spot true proportions and locations, creates gradation arrays for specified cell types, calculates nUMI counts, and generates and saves plots.  
+.<div align=center><img src="inst/extData/type_one_Pie_chart_celltype_proportions.png" width="300" height="450" /></div>.<div align=center><img src="inst/extData/type_one_plot_Locations_of_cell_with_grid.png" width="300" height="450" /></div>  
 ##
 ## ***4.2 Parameters***  
   * 'meta_data_file': Path to the metadata file (CSV format).  
@@ -228,6 +229,7 @@ generate_plots_and_save(combined_arrays, selected_clusters, new_data, sim_spatia
 # **Section5: 'generate_type2_data'**    
 ## ***5.1 Description***    
 The generate_type2_data function simulates spatial transcriptomics data, which is essential for studying gene expression within a spatial context. The function performs the following steps:  
+.<div align=center><img src="inst/extData/type_two_Pie_chart_celltype_proportions.png" width="300" height="450" /></div>.<div align=center><img src="inst/extData/type_two_plot_Locations_of_cell_with_grid.png" width="300" height="450" /></div>
 ### ***5.1.1 Processes Input Data:***   
 Reads and filters the metadata and gene count files based on the selected clusters.  
 ### ***5.1.2 Generates Spatial Spot True Proportions:***  
@@ -246,11 +248,13 @@ The output includes several CSV files containing the simulated data and plots il
 #
 # **Section6: 'generate_type3_data'**    
 ## ***6.1 Description***    
-The generate_type3_data function simulates spatial transcriptomics data for selected clusters with a distinct gradation pattern compared to other types. This function is designed to capture complex spatial relationships in gene expression data.   
+The generate_type3_data function simulates spatial transcriptomics data for selected clusters with a distinct gradation pattern compared to other types. This function is designed to capture complex spatial relationships in gene expression data.  
+.<div align=center><img src="inst/extData/type_three_Pie_chart_celltype_proportions.png" width="300" height="450" /></div>.<div align=center><img src="inst/extData/type_three_plot_Locations_of_cell_with_grid.png" width="300" height="450" /></div>
 #
 # **Section7: 'generate_type4_data'**    
 ## ***7.1 Description***    
 The generate_type3_data function simulates spatial transcriptomics data for selected clusters with a distinct gradation pattern compared to other types. This function is designed to capture complex spatial relationships in gene expression data.   
+.<div align=center><img src="inst/extData/type_four_Pie_chart_celltype_proportions.png" width="300" height="450" /></div>.<div align=center><img src="inst/extData/type_four_plot_Locations_of_cell_with_grid.png" width="300" height="450" /></div>
 #
 # **Section8:Using Custom scRNA-seq and STARmap Data to Generate Simulated SRT Data**  
 **This guide provides a step-by-step process for generating simulated spatial transcriptomics (SRT) data using custom single-cell RNA sequencing (scRNA-seq) data and spatial transcriptomics data. The simulation is performed using the Generating_simulation_data function from the R programming environment.**  
