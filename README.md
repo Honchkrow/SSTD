@@ -1,4 +1,3 @@
-
 # **Section1:Overview**  
 This document provides details on how to use the functions for generating various types of simulated spatial transcriptomics data, including descriptions of the specific code and parameter meanings for each data type, as well as instructions on generating simulated SRT data from custom scRNA-seq and STARmap data.  
 #
@@ -306,3 +305,6 @@ The function also generates visualizations such as:
   * Ensure that your data files are correctly formatted and have the necessary column names.  
   * Adjust the grid_interval parameter based on the spatial resolution of your data.  
   * Customize the prefix to organize your output files as needed.  
+# **Section8:Reference**  
+#
+# **Section9:Citation**  
